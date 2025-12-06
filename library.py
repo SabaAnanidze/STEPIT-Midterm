@@ -3,7 +3,7 @@ class Book: #წიგნის კლასი რომელსაც აქ�
         self._title = title
         self._author = author
         self._year = year
- 
+
     @property #ვქმნით იმისათვის რომ გავაკონტროლოთ და შევამოწმოთ მონაცემები
     def title(self):
         return self._title
@@ -54,7 +54,7 @@ class BookManager:  #ვქმნით კლასს რომელიც �
     def search_by_title(self, title_query: str): #სარჩევი სათაურის მიხედვით
         title_query = title_query.lower()
         return [book for book in self._books if title_query in book.title.lower()]
- 
+
  
 def input_non_empty(userinp: str): #ვამოწმებთ აკმაყოფილებს თუ არა ინფუთი მოთხოვნებს
     while True:
@@ -70,7 +70,7 @@ def input_year(userinp: str): #შეყვანილი წელი უნ�
         text = input(userinp).strip()
         if text.isdigit() and int(text) > 0:
             return int(text)
-        print("Year must be a positive number.")
+        print("Invalid year. Year must be a positive integer.")
  
  
 def print_menu(): #კონსოლის მენიუ რომელიც იქნება პირველი რასაც მომხმარებელი დაინახავს
